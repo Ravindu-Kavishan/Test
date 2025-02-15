@@ -17,5 +17,11 @@ def head_root():
 
 @app.post("/generateCommit")
 def process_message(request: MessageRequest):
-    new_message = "first commit"
+    if request.commit_type == "feat":
+        new_message = "Add a new feature"
+    elif request.commit_type == "fix":
+        new_message = "Fix a bug"
+    else:
+        new_message = "General commit"
+    
     return {"commit_message": new_message}
