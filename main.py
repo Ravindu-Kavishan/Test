@@ -18,4 +18,4 @@ def head_root():
 @app.post("/generateCommit")
 def process_message(request: MessageRequest):
     new_message = "first commit"
-    return {"new_message": new_message}
+    return {"commit_message": new_message}
